@@ -199,6 +199,8 @@ Reset_Handler:
     jbsr    board_init
 #endif
 
+    jbsr    init_cxx_abi
+
     jbsr    main
     .size   Reset_Handler, . - Reset_Handler
 
