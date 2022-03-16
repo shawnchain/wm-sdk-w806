@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #define TIM                ((TIM_TypeDef *)TIM_BASE)
 #define TIM0                0
 #define TIM1                1
@@ -71,9 +75,6 @@ typedef struct
 
 #define __HAL_TIM_CLEAR_IT(__HANDLE__)              (TIM->CR |= TIM_CR_TIM_TIF((__HANDLE__)->Instance - TIM0))
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef HAL_TIM_Base_Init(TIM_HandleTypeDef *htim);
 HAL_StatusTypeDef HAL_TIM_Base_DeInit(TIM_HandleTypeDef *htim);
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim);

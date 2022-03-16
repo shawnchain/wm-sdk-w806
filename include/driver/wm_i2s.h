@@ -4,6 +4,10 @@
 #include "wm_hal.h"
 #include "wm_dma.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
   * @brief I2S Init structure definition
   */
@@ -207,9 +211,6 @@ typedef struct
 
 #define __HAL_I2S_CLEAR_IT(__HANDLE__, __FLAG__)    ((__HANDLE__)->Instance->IF |= (__FLAG__))
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef HAL_I2S_Init(I2S_HandleTypeDef *hi2s);
 HAL_StatusTypeDef HAL_I2S_DeInit(I2S_HandleTypeDef *hi2s);
 

@@ -43,10 +43,10 @@
                                       (__HANDLE__)->Lock = HAL_UNLOCKED;    \
                                     }while (0)
 										
-
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
+
 HAL_StatusTypeDef HAL_Init(void);
 HAL_StatusTypeDef HAL_DeInit(void);
 void HAL_MspInit(void);

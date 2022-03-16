@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #define PAGE_SIZE      256
 #define SECTOR_SIZE    4096
 
@@ -20,9 +24,6 @@
 
 #define swap32(a) (((a & 0xFF) << 24) | ((a & 0xFF00) << 8) | ((a & 0xFF0000) >> 8) | (a >> 24))
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 int SPIFLS_Init(void);
 
 int SPIFLS_Read_ID(uint8_t *id);

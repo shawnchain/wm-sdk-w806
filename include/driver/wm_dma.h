@@ -4,6 +4,10 @@
 #include "wm_type_def.h"
 #include "wm_regs.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef enum
 {
     HAL_DMA_STATE_RESET      = 0x00U,
@@ -248,9 +252,6 @@ typedef struct __DMA_HandleTypeDef
 
 #define __HAL_DMA_CLEAR_FLAG(__HANDLE__, __FLAG__)    (SET_BIT((__HANDLE__)->DmaBaseAddress->IF, (__FLAG__)))
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef HAL_DMA_Init(DMA_HandleTypeDef *hdma);
 HAL_StatusTypeDef HAL_DMA_DeInit (DMA_HandleTypeDef *hdma);
 HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint16_t DataLength);

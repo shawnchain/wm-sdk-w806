@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 typedef struct
 {
     uint32_t Channel;               /* Specifies the touch channel used.
@@ -87,9 +91,6 @@ typedef struct __TOUCH_HandleTypeDef
 
 #define __HAL_TOUCH_CLEAR_IT(__HANDLE__, __FLAG__)        (WRITE_REG((__HANDLE__)->Instance->IE_IF, __FLAG__))
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef   HAL_TOUCH_Init(TOUCH_HandleTypeDef *htouch);
 HAL_StatusTypeDef   HAL_TOUCH_DeInit(TOUCH_HandleTypeDef *htouch);
 void HAL_TOUCH_MspInit(TOUCH_HandleTypeDef *htouch);

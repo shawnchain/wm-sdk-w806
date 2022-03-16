@@ -12,6 +12,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**BASE PLL CLOCK*/
 #define W806_PLL_CLK_MHZ          (480)
 
@@ -54,10 +58,6 @@ typedef enum
     HAL_TICK_FREQ_DEFAULT      = HAL_TICK_FREQ_1KHZ
 } HAL_TickFreqTypeDef;
 
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 void SystemClock_Config(uint32_t clk);
 void SystemClock_Get(wm_sys_clk *sysclk);
 

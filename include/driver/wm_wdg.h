@@ -5,6 +5,10 @@
 
 #define WDG                ((WDG_TypeDef *)WDG_BASE)
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     uint32_t Reload;    // unit: us
@@ -26,9 +30,6 @@ typedef struct
 
 #define __HAL_WDG_CLEAR_FLAG(__HANDLE__, __FLAG__)         ((__HANDLE__)->Instance->CLR = __FLAG__)
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef     HAL_WDG_Init(WDG_HandleTypeDef *hwdg);
 
 void HAL_WDG_MspInit(WDG_HandleTypeDef* hwdg);

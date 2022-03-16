@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     uint32_t Prescaler;            /* Specifies the prescaler value used to divide the PWM clock(40MHz).
@@ -119,12 +123,6 @@ typedef struct
 
 #define IS_PWM_DTCNT(__CNT__) (((__CNT__) >= 0) && ((__CNT__) <= 0x0FF))
 
-
-
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef    HAL_PWM_Init(PWM_HandleTypeDef *hpwm);
 HAL_StatusTypeDef    HAL_PWM_DeInit(PWM_HandleTypeDef *hpwm);
 void                 HAL_PWM_MspInit(PWM_HandleTypeDef *hpwm);

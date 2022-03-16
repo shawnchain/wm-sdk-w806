@@ -4,6 +4,10 @@
 #include "wm_hal.h"
 #include "wm_dma.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 typedef struct
 {
     uint32_t Mode;                /*!< Specifies the SPI operating mode.
@@ -163,9 +167,6 @@ typedef struct __SPI_HandleTypeDef
 
 #define __HAL_SPI_DISABLE_IT(__HANDLE__, IT)    SET_BIT((__HANDLE__)->Instance->INT_MASK, IT)
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef HAL_SPI_Init(SPI_HandleTypeDef *hspi);
 HAL_StatusTypeDef HAL_SPI_DeInit(SPI_HandleTypeDef *hspi);
 void HAL_SPI_MspInit(SPI_HandleTypeDef *hspi);

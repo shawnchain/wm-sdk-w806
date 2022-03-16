@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     uint8_t Year;       // range [0, 99]
@@ -36,11 +40,6 @@ typedef struct
 #define IS_RTC_YEAR(YEAR)             ((YEAR) <= 99U)
 #define IS_RTC_MONTH(MONTH)           (((MONTH) >= 1U) && ((MONTH) <= 12U))
 #define IS_RTC_DATE(DATE)             (((DATE) >= 1U) && ((DATE) <= 31U))
-
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 
 HAL_StatusTypeDef HAL_PMU_Init(PMU_HandleTypeDef *hpmu);
 HAL_StatusTypeDef HAL_PMU_DeInit(PMU_HandleTypeDef *hpmu);

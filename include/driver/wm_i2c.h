@@ -17,6 +17,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct __I2C_HandleTypeDef
 {
     I2C_TypeDef                 *Instance;      /*!< I2C registers base address               */
@@ -26,10 +30,6 @@ typedef struct __I2C_HandleTypeDef
 } I2C_HandleTypeDef;
 
 #define I2C                             ((I2C_TypeDef *)I2C_BASE)
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 
 HAL_StatusTypeDef HAL_I2C_Init(I2C_HandleTypeDef *hi2c);
 HAL_StatusTypeDef HAL_I2C_DeInit(I2C_HandleTypeDef *hi2c);

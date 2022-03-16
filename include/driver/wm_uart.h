@@ -3,6 +3,9 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C"{
+#endif
 
 typedef struct
 {
@@ -203,10 +206,6 @@ typedef enum
 
 #define __HAL_UART_CLEAR_FLAG(__HANDLE__, __FLAG__) ((__HANDLE__)->Instance->INTS |= __FLAG__)
 
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef HAL_UART_Init(UART_HandleTypeDef *huart);
 
 HAL_StatusTypeDef HAL_UART_DeInit(UART_HandleTypeDef *huart);

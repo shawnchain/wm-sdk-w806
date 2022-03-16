@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     HAL_LockTypeDef             Lock;
@@ -99,9 +103,6 @@ typedef union {
 #define CMD_START_Pos                 8U                                          /*!< CMD start position */
 #define CMD_START_Msk                 (1UL << CMD_START_Pos)                         /*!< CMD start Mask */
 
-#ifdef __cplusplus
-extern "C"{
-#endif
 /**
  * @brief          This function is used to unlock flash protect area [0x0~0x2000].
  *

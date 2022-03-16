@@ -3,6 +3,10 @@
 
 #include "wm_hal.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct
 {
     uint32_t channel;    /* ADC_CHANNEL_0 ~ channel 0
@@ -86,12 +90,7 @@ typedef struct __ADC_HandleTypeDef
   
 #define __HAL_ADC_GET_FLAG(__HANDLE__, __FLAG__)                               \
   ((((__HANDLE__)->Instance->IF) & (__FLAG__)) == (__FLAG__))
-  
 
-
-#ifdef __cplusplus
-extern "C"{
-#endif
 HAL_StatusTypeDef       HAL_ADC_Init(ADC_HandleTypeDef* hadc);
 HAL_StatusTypeDef       HAL_ADC_DeInit(ADC_HandleTypeDef *hadc);
 void                    HAL_ADC_MspInit(ADC_HandleTypeDef* hadc);
